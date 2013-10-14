@@ -16,10 +16,10 @@ app.get('/*', function(req, res) {
     res.render('index');
 });
 
-app.io.route('locations', function(req) {
-    //req.io.emit('res', controllers.Locations.getData());
-    req.io.emit('locations', { "ob": "obeezy" });
-});
+// app.io.route('locations', function(req) {
+//     //req.io.emit('res', controllers.Locations.getData());
+//     req.io.emit('locations', { "ob": "obeezy" });
+// });
 
 
 app.listen(7076);
