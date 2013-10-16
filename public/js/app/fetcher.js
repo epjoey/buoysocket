@@ -16,8 +16,6 @@ define([
       object = window.App.cache.get(name, id);
 
       if (object) {
-        console.log("hereere");
-        console.log(object);
         object.trigger("fetch");
         return object;
       }
