@@ -1,7 +1,7 @@
-define(["backbone", "app/models/location"], function(Backbone, Location) {
+define(["backbone", "app/model/spot"], function(Backbone, Spot) {
 
   return Backbone.Collection.extend({
-    model: Location,
+    model: Spot,
     url: 'http://localhost/api/location/locations.php',
   });
 });

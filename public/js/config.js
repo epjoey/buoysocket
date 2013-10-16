@@ -19,8 +19,3 @@ requirejs.config({
       "io"          : "/socket.io/socket.io"
     }
 });
-
-// Load the main app module to start the app
-requirejs(["backbone", "app/router"], function(Backbone, Router) {
-  new Router();
-});

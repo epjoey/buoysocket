@@ -1,36 +1,31 @@
 define([
   "backbone",
-  "app/utils/dom",
-  "app/controllers/index",
-  "app/controllers/location"
+  "app/util/dom",
+  "app/controller/index",
+  "app/controller/spot"
 ], 
 
 function( 
   Backbone, 
-  DomUtils,
+  DomUtil,
   IndexController, 
-  LocationController
+  SpotController
 ){
 
   return Backbone.Router.extend({
 
     initialize: function() {
-      DomUtils.hijackLinks(this);
+
+      console.log("Initializing Router");
+
+      DomUtil.hijackLinks(this);
       Backbone.history.start({pushState: true});    
     },
 
     routes: {
-      "":"index",
-      "location/:id":"location"
-    },
-
-    index: function() {
-      IndexController();
-    },
-
-    location: function(id) {
-      LocationController(id);
-    },
+      "": IndexController,
+      "spot/:id": SpotController
+    }
 
   });
 

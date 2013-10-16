@@ -13,7 +13,7 @@ app.set('views', __dirname + '/');
 
 // Initial web requests...most simple server ever
 app.get('/*', function(req, res) {
-    res.render('index');
+    res.render('client');
 });
 
 // app.io.route('locations', function(req) {
