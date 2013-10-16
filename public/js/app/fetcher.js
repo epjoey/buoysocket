@@ -1,10 +1,6 @@
 define([
-  
-  "backbone"
 
 ], function(
-  
-  Backbone
 
 ){
 
