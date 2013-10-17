@@ -13,11 +13,17 @@ define([
     _store: {},
 
     get: function(name, id) {
-      return this._store[[name, id].join(":")];
+      if (this._store[name]) {
+        return this._store[name][id];
+      }
+      return null;
     },
 
     set: function(name, id, obj) {
-      this._store[[name, id].join(":")] = obj;
+      if (!this._store[name]) {
+        this._store[name] = {};
+      }
+      this._store[name][id] = obj;
     }
   });
 });

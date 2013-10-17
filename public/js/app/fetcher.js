@@ -37,23 +37,31 @@ define([
 
     fetchCollection: function(collection) {
 
-      var collection = new collection()
-        , modelName = collection.model.getName();
+      var coll = new collection()
+        , name = coll.model.getName();
 
-      console.log("Fetching " + modelName + " Collection");
+      console.log("Fetching " + name + " Collection");
+      
+      // coll = window.App.cache.get(name);
 
-      collection.fetch({
+      // if (coll) {
+      //   coll.trigger("coll:fetch");
+      //   return coll;
+      // }
+
+      // coll = new collection();
+
+      coll.fetch({
         success: function() {
-          // _.each(collection.models, function(object) {
+          // _.each(coll.models, function(object) {
           //   console.log(object);
-          //   //window.App.cache.set(modelName, object.id, object);
+          //   window.App.cache.set(name, object.id, object);
           // });
-          collection.trigger("fetch");
+          coll.trigger("coll:fetch");
         }
       });
 
-
-      return collection;
+      return coll;
 
     },
 

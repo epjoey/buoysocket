@@ -17,11 +17,11 @@ define([
     console.log("In Index Controller");
 
     var view = new View();
-
+    
     view.collection = fetcher.fetchCollection(Collection);
 
-    view.collection.on('fetch', function(){
-      view.render();
+    view.collection.on('coll:fetch', function(item){
+      view.render(item);
     });
 
   }
